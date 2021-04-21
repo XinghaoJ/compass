@@ -23,7 +23,11 @@
 		<option name="config_idealized_estuary_tidal_boundary_width">2000.0</option>
 		<option name="config_idealized_estuary_restoring_salinity_width_ocean">2000.0</option>
 		<option name="config_idealized_estuary_restoring_salinity_width_river">2000.0</option>
-		<option name="config_idealized_estuary_restoring_salinity_tau">30.0</option>
+		<option name="config_idealized_estuary_restoring_salinity_tau">0.125</option>
+		<option name="config_idealized_estuary_velocity_river">0.08</option>
+		<option name="config_use_lateral_boundary_forcing">.true.</option>
+		<option name="config_lateral_boundary_forcing_inflow_temperature">15.0</option>
+		<option name="config_lateral_boundary_forcing_inflow_salinity">0.0</option>
 	</namelist>
 
 	<streams name="streams.ocean" keep="immutable" mode="init">
@@ -70,6 +74,7 @@
 				<member name="evaporationFlux" type="var"/>
 				<member name="rainFlux" type="var"/>
 				<member name="tidalInputMask" type="var"/>
+				<member name="boundaryLayerThicknessTendency" type="var"/>
 			</add_contents>
 		</stream>
 	</streams>
