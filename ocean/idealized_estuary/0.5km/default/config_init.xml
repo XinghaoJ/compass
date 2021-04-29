@@ -21,7 +21,7 @@
 		<option name="config_idealized_estuary_initial_salinity_river">0.0</option>
 		<option name="config_idealized_estuary_initial_salinity_width">20000.0</option>
 		<option name="config_idealized_estuary_tidal_boundary_width">2000.0</option>
-		<option name="config_idealized_estuary_restoring_salinity_width_ocean">2000.0</option>
+		<option name="config_idealized_estuary_restoring_salinity_width_ocean">5000.0</option>
 		<option name="config_idealized_estuary_restoring_salinity_width_river">2000.0</option>
 		<option name="config_idealized_estuary_restoring_salinity_tau">0.125</option>
 		<option name="config_idealized_estuary_velocity_river">0.08</option>
