@@ -10,18 +10,17 @@
 
 	<namelist name="namelist.ocean" mode="forward">
 		<option name="config_ocean_run_mode">'forward'</option>
-		<option name="config_dt">'00:01:00'</option>
+		<option name="config_dt">'00:00:30'</option>
 		<option name="config_time_integrator">'RK4'</option>
-		<option name="config_run_duration">'0010_00:00:00'</option>
+		<option name="config_run_duration">'0015_00:00:00'</option>
 		<option name="config_use_tidal_forcing">.true.</option>
-		<option name="config_tidal_forcing_type">'thickness_source'</option>
+		<option name="config_tidal_forcing_type">'boundary_flux'</option>
 		<option name="config_tidal_forcing_model">'monochromatic'</option>
-		<option name="config_tidal_forcing_monochromatic_amp">10</option>
 		<option name="config_tidal_forcing_monochromatic_period">0.5</option>
 		<option name="config_tidal_forcing_monochromatic_baseline">0.0</option>
+		<option name="config_tidal_forcing_monochromatic_velocity">0.4</option>
 		<option name="config_tidal_forcing_inflow_temperature">15.0</option>
 		<option name="config_tidal_forcing_inflow_salinity">30.0</option>
-		<option name="config_use_tidal_forcing_tau">60.0</option>
 		<option name="config_use_activeTracers_interior_restoring">.true.</option>
 		<option name="config_use_cvmix">.false.</option>
 		<option name="config_use_gotm">.true.</option>
@@ -61,6 +60,7 @@
 				<member name="refZMid" type="var"/>
 				<member name="refLayerThickness" type="var"/>
 				<member name="layerThickness" type="var"/>
+				<member name="ssh" type="var"/>
 			</add_contents>
 		</stream>
 		<stream name="forcing_data">
@@ -80,7 +80,7 @@
 				<member name="shortWaveHeatFlux" type="var"/>
 				<member name="evaporationFlux" type="var"/>
 				<member name="rainFlux" type="var"/>
-				<member name="tidalInputMask" type="var"/>
+				<member name="tidalInputFactor" type="var"/>
 				<member name="boundaryLayerThicknessTendency" type="var"/>
 			</add_contents>
 		</stream>
@@ -88,8 +88,8 @@
 
 	<run_script name="run.py">
         <step executable="gpmetis">
-            <argument flag="graph.info">2</argument>
+            <argument flag="graph.info">4</argument>
         </step>
-		<model_run procs="2" threads="1" namelist="namelist.ocean" streams="streams.ocean"/>
+		<model_run procs="4" threads="1" namelist="namelist.ocean" streams="streams.ocean"/>
 	</run_script>
 </config>
