@@ -27,6 +27,7 @@
         <option name="config_use_bulk_wind_stress">.true.</option>
  		<option name="config_use_bulk_thickness_flux">.true.</option>
  		<option name="config_use_activeTracers_surface_bulk_forcing">.true.</option>
+		<option name="config_use_activeTracers_interior_restoring">.true.</option>
 	</namelist>
 
 	<streams name="streams.ocean" keep="immutable" mode="init">
